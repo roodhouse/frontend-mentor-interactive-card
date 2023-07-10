@@ -1,11 +1,20 @@
 import './App.css';
+import Top from '../src/components/Top'
+import Bottom from '../src/components/Bottom'
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="text-3xl font-bold underline text-darkGrayishViolet">
-      <span className='font-["Space_Grotesk"] text-veryDarkViolet'>world!</span> Hello 
-    </h1>
+    <div className="App h-screen">
+      <div id='mainWrapper' className='h-full flex justify-center'>
+        <div id='mainContainer' className='h-full pb-[45px] max-w-[375px]'>
+          <div id='topWrapper'>
+            <Top />
+          </div>
+          <div id='bottomWrapper'>
+            <Bottom />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
