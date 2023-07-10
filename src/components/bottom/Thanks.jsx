@@ -10,7 +10,7 @@ function Thanks() {
         <div id="iconWrapper" className='mb-[35px]'>
           <Icon />
         </div>
-        <div id="copyWrapper">
+        <div id="copyWrapper" className='mb-12'>
           <Copy />
         </div>
         <div id="continueWrapper">

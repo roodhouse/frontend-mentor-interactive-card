@@ -6,10 +6,10 @@ function Bottom() {
   return (
     <>
       <div id="bottomContainer" className='px-6'>
-        <div id="formWrapper" className='hidden'>
+        <div id="formWrapper" className=''>
           <Form />
         </div>
-        <div id="thanksWrapper" className=''>
+        <div id="thanksWrapper" className='hidden'>
           <Thanks />
         </div>
       </div>
