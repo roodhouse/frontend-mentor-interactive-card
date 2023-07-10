@@ -2,7 +2,11 @@ import React from 'react'
 
 function Thanks() {
   return (
-    <div>Thanks</div>
+    <>
+      <div id="thanksContainer">
+        
+      </div>
+    </>
   )
 }
 

@@ -9,7 +9,7 @@ function Top() {
         <div id="cardBackWrapper" className='bg-[url("/src/images/bg-main-mobile.png")] bg-no-repeat h-[240px]'>
         <CardBack />
         </div>
-        <div id="cardFrontWrapper" className=''>
+        <div id="cardFrontWrapper" className='drop-shadow-[0px_39px_60px_rgba(0,0,0,0.14)]'>
         <CardFront />
         </div>
             
