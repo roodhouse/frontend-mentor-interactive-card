@@ -8,7 +8,7 @@ function CardHolderName() {
               <label htmlFor="cardHolderName">CARDHOLDER NAME</label>
             </div>
             <div id="theNameContainer">
-              <input type="text" id='cardHolderName' name='cardHolderName' placeholder='e.g. Jane Appleseed' className='border border-solid rounded-lg border-lightGrayishViolet pl-4 py-[11px] placeholder:text-veryDarkViolet placeholder:text-[18px] placeholder:font-["Space_Grotesk"] placeholder:font-medium placeholder:opacity-25' />
+              <input type="text" id='cardHolderName' name='cardHolderName' placeholder='e.g. Jane Appleseed' className='w-full border border-solid rounded-lg border-lightGrayishViolet pl-4 py-[11px] placeholder:text-veryDarkViolet placeholder:text-[18px] placeholder:font-["Space_Grotesk"] placeholder:font-medium placeholder:opacity-25' />
             </div>
           </div>
     </>

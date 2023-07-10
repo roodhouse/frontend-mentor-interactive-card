@@ -3,25 +3,29 @@ import CardHolderName from './form/CardHolderName'
 import CardHolderNumber from './form/CardHolderNumber'
 import Exp from './form/Exp'
 import Cvc from './form/Cvc'
+import Submit from './form/Submit'
 
 function Form() {
   return (
     <>
       <div id="formContainer">
         <form noValidate className='w-full flex flex-col items-start'>
-          <div id="cardHolderNameWrapper" className='w-full'>
+          <div id="cardHolderNameWrapper" className='w-full mb-[20px]'>
             <CardHolderName />
           </div>
-          <div id="cardHolderNumberWrapper" className='w-full'>
+          <div id="cardHolderNumberWrapper" className='w-full mb-[20px]'>
             <CardHolderNumber />
           </div>
-          <div id="expCvcWrapper" className='w-full'>
-            <div id="expWrapper">
+          <div id="expCvcWrapper" className='w-full flex mb-7'>
+            <div id="expWrapper" className='mr-[11px]'>
               <Exp />
             </div>
             <div id="CvcWrapper" className='w-full'>
               <Cvc />
             </div>
+          </div>
+          <div id="submitWrapper" className='w-full'>
+            <Submit />
           </div>
         </form>
       </div>

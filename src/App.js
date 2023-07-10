@@ -5,8 +5,8 @@ import Bottom from '../src/components/Bottom'
 function App() {
   return (
     <div className="App h-screen">
-      <div id='mainWrapper' className='h-full'>
-        <div id='mainContainer' className='h-full pb-[45px]'>
+      <div id='mainWrapper' className='h-full flex justify-center'>
+        <div id='mainContainer' className='h-full pb-[45px] max-w-[375px]'>
           <div id='topWrapper'>
             <Top />
           </div>
