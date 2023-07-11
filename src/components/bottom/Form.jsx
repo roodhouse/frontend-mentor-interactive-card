@@ -25,15 +25,19 @@ function Form({ recordName, recordNumber, recordMonth, recordYear, recordCvc }) 
 
   function onError(e) {
     for (let error in e ) {
-      console.log(error)
+      const errorInput = document.getElementById(error)
+      errorInput.style.borderColor = '#FF5050'
+      
       if (error === 'cardHolderExpYear') {
-        console.log('true')
         error = 'cardHolderExpMonth'
-        console.log(error)
       }
+      
       const errorDiv = document.getElementById(error +'Error').firstChild
-      console.log(errorDiv)
       errorDiv.style.display = 'block'
+
+      errorInput.addEventListener('input', function(){
+        errorInput.style.borderColor = '#DFDEE0'
+      })
     }
   }
 
