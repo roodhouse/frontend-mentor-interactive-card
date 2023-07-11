@@ -11,11 +11,10 @@ function App() {
   const [year, setYear] = useState('00')
   const [cvc, setCvc] = useState('000')
 
-
   if(name === '') {
     setName('JANE APPLESEED')
   }
-  if(number === '') {
+  if(number === '' || number === '   ') {
     setNumber('0000 0000 0000 0000')
   }
   if (month === '') {
@@ -32,7 +31,23 @@ function App() {
     setName(recordName)
   }
   function recordNumber(recordNumber) {
-    setNumber(recordNumber)
+    // break the number into quarter sections
+    const numberArray = Array.from(recordNumber)
+    const quarterIndex = Math.ceil(numberArray.length / 4)
+
+    let firstQ = numberArray.splice(0, quarterIndex)
+    let secondQ = numberArray.splice(0, quarterIndex)
+    let thirdQ = numberArray.splice(0, quarterIndex)
+    let fourthQ = numberArray.splice(0, quarterIndex)
+    // turn each section into a string and remove the commas
+    firstQ = firstQ.join('')
+    secondQ = secondQ.join('')
+    thirdQ = thirdQ.join('')
+    fourthQ = fourthQ.join('')
+    // concat the 4 sections with a space between each
+    const fullNumber = firstQ + ' ' + secondQ + ' ' + thirdQ + ' ' + fourthQ
+    // set the number to the original numbers but with a space between the sections
+    setNumber(fullNumber)
   }
   function recordMonth(recordMonth) {
     setMonth(recordMonth)
@@ -45,6 +60,22 @@ function App() {
   }
 
 let exp = month + '/' + year
+
+
+// const numberArray = Array.from(number)
+// const quarterIndex = Math.ceil(numberArray.length / 4)
+// let firstQ = numberArray.splice(0, quarterIndex)
+// let secondQ = numberArray.splice(0, quarterIndex)
+// let thirdQ = numberArray.splice(0, quarterIndex)
+// let fourthQ = numberArray.splice(0, quarterIndex)
+
+// firstQ = firstQ.join('')
+// secondQ = secondQ.join('')
+// thirdQ = thirdQ.join('')
+// fourthQ = fourthQ.join('')
+// const fullNumber = firstQ + ' ' + secondQ + ' ' + thirdQ + ' ' + fourthQ
+// console.log(fullNumber)
+
 
   return (
     <div className="App h-screen">

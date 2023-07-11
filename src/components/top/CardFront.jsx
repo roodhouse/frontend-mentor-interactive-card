@@ -2,6 +2,7 @@ import React from 'react'
 import Logo from '../../images/card-logo.svg'
 
 function CardFront({ name, number, exp }) {
+    
   return (
     <>
         <div id="cardFrontContainer" className='h-[156px] pl-[17px] pr-[73px] mt-[-119px]'>
