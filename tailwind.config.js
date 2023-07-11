@@ -5,6 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    borderColor: {
+      veryDarkViolet: '#21092F',
+      lightGrayishViolet: 'hsl(270, 3%, 87%)'
+    },
     colors: {
       white: 'hsl(0, 0%, 100%)',
       lightGrayishViolet: 'hsl(270, 3%, 87%)',
