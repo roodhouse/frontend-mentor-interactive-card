@@ -1,6 +1,6 @@
 import React from 'react'
 
-function CardHolderName({ register, recordName }) {
+function CardHolderName({ register, recordName, errors }) {
   return (
     <>
         <div id="cardHolderNameContainer">
@@ -10,6 +10,7 @@ function CardHolderName({ register, recordName }) {
             <div id="theNameContainer">
               <input type="text" id='cardHolderName' name='cardHolderName' placeholder='e.g. Jane Appleseed' className='w-full font-["Space_Grotesk"] text-[18px] text-veryDarkViolet border border-solid rounded-lg border-lightGrayishViolet pl-4 py-[11px] placeholder:text-veryDarkViolet placeholder:text-[18px] placeholder:font-["Space_Grotesk"] placeholder:font-medium placeholder:opacity-25'
                 {...register('cardHolderName',{
+                  required: 'Name is required',
                   onChange: (e) => {
                     recordName(e.target.value)
                   }
@@ -17,7 +18,7 @@ function CardHolderName({ register, recordName }) {
               />
             </div>
             <div id="cardHolderNameError" className='h-5 text-error text-xs font-["Space_Grotesk"] font-medium mt-2 text-left'>
-              <p id='nameError' className='hidden pt-2'>Name is required</p>
+              <p id='nameError' className='hidden pt-2'>{errors.cardHolderName?.message}</p>
             </div>
           </div>
     </>

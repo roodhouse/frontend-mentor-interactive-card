@@ -23,8 +23,15 @@ function Form({ recordName, recordNumber, recordMonth, recordYear, recordCvc }) 
     thanksWrapper.style.display = 'block'
   }
 
-  function onError() {
-    console.log('error')
+  function onError(e) {
+    console.log(e.cardHolderName.message)
+    console.log(e)
+
+    for (const error in e ) {
+      console.log(error)
+      const errorDiv = document.getElementById(error +'Error').firstChild
+      errorDiv.style.display = 'block'
+    }
   }
 
   return (
@@ -32,7 +39,7 @@ function Form({ recordName, recordNumber, recordMonth, recordYear, recordCvc }) 
       <div id="formContainer">
         <form noValidate onSubmit={handleSubmit(onSubmit, onError)} className='w-full flex flex-col items-start'>
           <div id="cardHolderNameWrapper" className='w-full mb-1'>
-            <CardHolderName register={register} recordName={recordName} />
+            <CardHolderName register={register} recordName={recordName} errors={errors} />
           </div>
           <div id="cardHolderNumberWrapper" className='w-full mb-1'>
             <CardHolderNumber register={register} recordNumber={recordNumber} />
