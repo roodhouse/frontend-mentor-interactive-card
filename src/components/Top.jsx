@@ -6,7 +6,7 @@ function Top({ name, number, exp, cvc }) {
   return (
     <>
       <div id="topContainer" className='w-full mb-[48px]'>
-        <div id="cardBackWrapper" className='bg-[url("/src/images/bg-main-mobile.png")] bg-no-repeat h-[240px]'>
+        <div id="cardBackWrapper" className='bg-[url("/src/images/bg-main-mobile.png")] bg-no-repeat h-[240px] xl:bg-[url("/src/images/bg-main-desktop.png")] xl:w-[483px] xl:h-screen xl:bg-cover'>
         <CardBack cvc={cvc} />
         </div>
         <div id="cardFrontWrapper" className='drop-shadow-[0px_39px_60px_rgba(0,0,0,0.14)]'>

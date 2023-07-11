@@ -5,8 +5,8 @@ function CardFront({ name, number, exp }) {
     
   return (
     <>
-        <div id="cardFrontContainer" className='h-[156px] pl-[17px] pr-[73px] mt-[-119px]'>
-            <div id="cardFont" className='bg-[url("/src/images/bg-card-front.png")] bg-cover h-full w-[285px] pt-[17px] pl-[19px] pb-[20px] pr-[20px]'>
+        <div id="cardFrontContainer" className='h-[156px] pl-[17px] pr-[73px] mt-[-119px] xl:pl-[164px] xl:pr-0 xl:mt-[-827px]'>
+            <div id="cardFont" className='bg-[url("/src/images/bg-card-front.png")] bg-cover h-full w-[285px] pt-[17px] pl-[19px] pb-[20px] pr-[20px] xl:h-[245px] xl:w-[447px]'>
                 <div id="logoContainer" className='w-[54px] h-[30px] mb-[37px]'>
                     <img src={Logo} alt="Logo" />
                 </div>

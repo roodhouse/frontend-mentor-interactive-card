@@ -48,7 +48,7 @@ function App() {
 
     // concat the 4 sections with a space between each
     const fullNumber = firstQ + ' ' + secondQ + ' ' + thirdQ + ' ' + fourthQ
-    
+
     // set the number to the original numbers but with a space between the sections
     setNumber(fullNumber)
   }
@@ -64,30 +64,14 @@ function App() {
 
 let exp = month + '/' + year
 
-
-// const numberArray = Array.from(number)
-// const quarterIndex = Math.ceil(numberArray.length / 4)
-// let firstQ = numberArray.splice(0, quarterIndex)
-// let secondQ = numberArray.splice(0, quarterIndex)
-// let thirdQ = numberArray.splice(0, quarterIndex)
-// let fourthQ = numberArray.splice(0, quarterIndex)
-
-// firstQ = firstQ.join('')
-// secondQ = secondQ.join('')
-// thirdQ = thirdQ.join('')
-// fourthQ = fourthQ.join('')
-// const fullNumber = firstQ + ' ' + secondQ + ' ' + thirdQ + ' ' + fourthQ
-// console.log(fullNumber)
-
-
   return (
     <div className="App h-screen">
-      <div id='mainWrapper' className='h-full flex justify-center'>
-        <div id='mainContainer' className='h-full pb-[45px] max-w-[375px]'>
-          <div id='topWrapper'>
+      <div id='mainWrapper' className='h-full flex justify-center xl:justify-normal'>
+        <div id='mainContainer' className='h-full pb-[45px] max-w-[375px] xl:max-w-full xl:w-full xl:flex'>
+          <div id='topWrapper' className='xl:w-[705px]'>
             <Top name={name} number={number} exp={exp} cvc={cvc}/>
           </div>
-          <div id='bottomWrapper'>
+          <div id='bottomWrapper' className='xl:w-[608px]'>
             <Bottom recordName={recordName} recordNumber={recordNumber} recordMonth={recordMonth} recordYear={recordYear} recordCvc={recordCvc}/>
           </div>
         </div>
