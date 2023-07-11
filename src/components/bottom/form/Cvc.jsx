@@ -11,6 +11,10 @@ function Cvc({ register, recordCvc, errors }) {
               <input type="text" id='cardHolderCvc' maxLength={3} name='cardHolderCvc' placeholder='e.g. 123' className='w-full font-["Space_Grotesk"] text-[18px] text-veryDarkViolet border border-solid rounded-lg border-lightGrayishViolet pl-4 py-[11px] placeholder:text-veryDarkViolet placeholder:text-[18px] placeholder:font-["Space_Grotesk"] placeholder:font-medium placeholder:opacity-25'
                 {...register('cardHolderCvc',{
                   required: 'Can\'t be blank',
+                  pattern: {
+                    value: /^[0-9]*$/,
+                    message: 'Numbers only'
+                  },
                   onChange: (e) => {
                     recordCvc(e.target.value)
                   }

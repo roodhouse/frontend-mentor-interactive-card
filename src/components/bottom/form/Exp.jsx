@@ -20,6 +20,10 @@ function Exp({ register, recordMonth, recordYear, errors }) {
                           value: 2,
                           message: 'Must be 2 digits'
                         },
+                        pattern: {
+                          value: /^[0-9]*$/,
+                          message: 'Wrong format, numbers only'
+                        },
                         onChange: (e) => {
                           recordMonth(e.target.value)
                         }
@@ -37,6 +41,10 @@ function Exp({ register, recordMonth, recordYear, errors }) {
                         minLength: {
                           value: 2,
                           message: 'Must be 2 digits'
+                        },
+                        pattern: {
+                          value: /^[0-9]*$/,
+                          message: 'Wrong format, numbers only'
                         },
                         onChange: (e) => {
                           recordYear(e.target.value)
