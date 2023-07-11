@@ -17,7 +17,10 @@ function Form({ recordName, recordNumber, recordMonth, recordYear, recordCvc }) 
   }})
 
   function onSubmit() {
-    console.log('submit')
+    const formWrapper = document.getElementById('formWrapper')
+    const thanksWrapper = document.getElementById('thanksWrapper')
+    formWrapper.style.display = 'none'
+    thanksWrapper.style.display = 'block'
   }
 
   function onError() {
