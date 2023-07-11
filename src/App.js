@@ -39,13 +39,16 @@ function App() {
     let secondQ = numberArray.splice(0, quarterIndex)
     let thirdQ = numberArray.splice(0, quarterIndex)
     let fourthQ = numberArray.splice(0, quarterIndex)
+
     // turn each section into a string and remove the commas
     firstQ = firstQ.join('')
     secondQ = secondQ.join('')
     thirdQ = thirdQ.join('')
     fourthQ = fourthQ.join('')
+
     // concat the 4 sections with a space between each
     const fullNumber = firstQ + ' ' + secondQ + ' ' + thirdQ + ' ' + fourthQ
+    
     // set the number to the original numbers but with a space between the sections
     setNumber(fullNumber)
   }
