@@ -24,12 +24,15 @@ function Form({ recordName, recordNumber, recordMonth, recordYear, recordCvc }) 
   }
 
   function onError(e) {
-    console.log(e.cardHolderName.message)
-    console.log(e)
-
-    for (const error in e ) {
+    for (let error in e ) {
       console.log(error)
+      if (error === 'cardHolderExpYear') {
+        console.log('true')
+        error = 'cardHolderExpMonth'
+        console.log(error)
+      }
       const errorDiv = document.getElementById(error +'Error').firstChild
+      console.log(errorDiv)
       errorDiv.style.display = 'block'
     }
   }
@@ -42,14 +45,14 @@ function Form({ recordName, recordNumber, recordMonth, recordYear, recordCvc }) 
             <CardHolderName register={register} recordName={recordName} errors={errors} />
           </div>
           <div id="cardHolderNumberWrapper" className='w-full mb-1'>
-            <CardHolderNumber register={register} recordNumber={recordNumber} />
+            <CardHolderNumber register={register} recordNumber={recordNumber} errors={errors} />
           </div>
           <div id="expCvcWrapper" className='w-full flex mb-7'>
             <div id="expWrapper" className='mr-[11px]'>
-              <Exp register={register} recordMonth={recordMonth} recordYear={recordYear}/>
+              <Exp register={register} recordMonth={recordMonth} recordYear={recordYear} errors={errors} />
             </div>
             <div id="CvcWrapper" className='w-full'>
-              <Cvc register={register} recordCvc={recordCvc} />
+              <Cvc register={register} recordCvc={recordCvc} errors={errors} />
             </div>
           </div>
           <div id="submitWrapper" className='w-full'>
