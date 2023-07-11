@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Exp({ register, recordMonth, recordYear }) {
+function Exp({ register, recordMonth, recordYear, errors }) {
   return (
     <>
         <div id="expContainer">
@@ -9,8 +9,21 @@ function Exp({ register, recordMonth, recordYear }) {
             </div>
             <div id="expDate" className='flex'>
                 <div id="theExpMonthContainer" className='mr-2'>
-                    <input type="text" id='expMonth' name='expMonth' placeholder='MM' className='w-full font-["Space_Grotesk"] text-[18px] text-veryDarkViolet border border-solid rounded-lg border-lightGrayishViolet pl-4 py-[11px] placeholder:text-veryDarkViolet placeholder:text-[18px] placeholder:font-["Space_Grotesk"] placeholder:font-medium placeholder:opacity-25'
-                      {...register('expMonth',{
+                    <input type="text" id='cardHolderExpMonth' maxLength={2} name='cardHolderExpMonth' placeholder='MM' className='w-full font-["Space_Grotesk"] text-[18px] text-veryDarkViolet border border-solid rounded-lg border-lightGrayishViolet pl-4 py-[11px] placeholder:text-veryDarkViolet placeholder:text-[18px] placeholder:font-["Space_Grotesk"] placeholder:font-medium placeholder:opacity-25'
+                      {...register('cardHolderExpMonth',{
+                        required: 'Can\'t be blank',
+                        maxLength: {
+                          value: 2,
+                          message: 'Must be 2 digits'
+                        },
+                        minLength: {
+                          value: 2,
+                          message: 'Must be 2 digits'
+                        },
+                        pattern: {
+                          value: /^[0-9]*$/,
+                          message: 'Wrong format, numbers only'
+                        },
                         onChange: (e) => {
                           recordMonth(e.target.value)
                         }
@@ -18,8 +31,21 @@ function Exp({ register, recordMonth, recordYear }) {
                     />
                 </div>
                 <div id="theExpYearContainer">
-                    <input type="text" id='expYear' name='expYear' placeholder='YY' className='w-full font-["Space_Grotesk"] text-[18px] text-veryDarkViolet border border-solid rounded-lg border-lightGrayishViolet pl-4 py-[11px] placeholder:text-veryDarkViolet placeholder:text-[18px] placeholder:font-["Space_Grotesk"] placeholder:font-medium placeholder:opacity-25' 
-                      {...register('expYear',{
+                    <input type="text" id='cardHolderExpYear' maxLength={2} name='cardHolderExpYear' placeholder='YY' className='w-full font-["Space_Grotesk"] text-[18px] text-veryDarkViolet border border-solid rounded-lg border-lightGrayishViolet pl-4 py-[11px] placeholder:text-veryDarkViolet placeholder:text-[18px] placeholder:font-["Space_Grotesk"] placeholder:font-medium placeholder:opacity-25' 
+                      {...register('cardHolderExpYear',{
+                        required: 'Can\'t be blank',
+                        maxLength: {
+                          value: 2,
+                          message: 'Must be 2 digits'
+                        },
+                        minLength: {
+                          value: 2,
+                          message: 'Must be 2 digits'
+                        },
+                        pattern: {
+                          value: /^[0-9]*$/,
+                          message: 'Wrong format, numbers only'
+                        },
                         onChange: (e) => {
                           recordYear(e.target.value)
                         }
@@ -27,8 +53,8 @@ function Exp({ register, recordMonth, recordYear }) {
                     />
                 </div>
             </div>
-            <div id="cardHolderExpError" className='h-5 text-error text-xs font-["Space_Grotesk"] font-medium mt-2 text-left'>
-              <p id='expError' className='hidden pt-2'>Can't be blank</p>
+            <div id="cardHolderExpMonthError" className='h-5 text-error text-xs font-["Space_Grotesk"] font-medium mt-2 text-left'>
+              <p id='expError' className='hidden pt-2'>{errors.cardHolderExpMonth?.message || errors.cardHolderExpYear?.message}</p>
             </div>
           </div>
     </>

@@ -23,8 +23,22 @@ function Form({ recordName, recordNumber, recordMonth, recordYear, recordCvc }) 
     thanksWrapper.style.display = 'block'
   }
 
-  function onError() {
-    console.log('error')
+  function onError(e) {
+    for (let error in e ) {
+      const errorInput = document.getElementById(error)
+      errorInput.style.borderColor = '#FF5050'
+      
+      if (error === 'cardHolderExpYear') {
+        error = 'cardHolderExpMonth'
+      }
+      
+      const errorDiv = document.getElementById(error +'Error').firstChild
+      errorDiv.style.display = 'block'
+
+      errorInput.addEventListener('input', function(){
+        errorInput.style.borderColor = '#DFDEE0'
+      })
+    }
   }
 
   return (
@@ -32,17 +46,17 @@ function Form({ recordName, recordNumber, recordMonth, recordYear, recordCvc }) 
       <div id="formContainer">
         <form noValidate onSubmit={handleSubmit(onSubmit, onError)} className='w-full flex flex-col items-start'>
           <div id="cardHolderNameWrapper" className='w-full mb-1'>
-            <CardHolderName register={register} recordName={recordName} />
+            <CardHolderName register={register} recordName={recordName} errors={errors} />
           </div>
           <div id="cardHolderNumberWrapper" className='w-full mb-1'>
-            <CardHolderNumber register={register} recordNumber={recordNumber} />
+            <CardHolderNumber register={register} recordNumber={recordNumber} errors={errors} />
           </div>
           <div id="expCvcWrapper" className='w-full flex mb-7'>
             <div id="expWrapper" className='mr-[11px]'>
-              <Exp register={register} recordMonth={recordMonth} recordYear={recordYear}/>
+              <Exp register={register} recordMonth={recordMonth} recordYear={recordYear} errors={errors} />
             </div>
             <div id="CvcWrapper" className='w-full'>
-              <Cvc register={register} recordCvc={recordCvc} />
+              <Cvc register={register} recordCvc={recordCvc} errors={errors} />
             </div>
           </div>
           <div id="submitWrapper" className='w-full'>
