@@ -65,9 +65,9 @@ function App() {
 let exp = month + '/' + year
 
   return (
-    <div className="App h-screen">
+    <div className="App">
       <div id='mainWrapper' className='h-full flex justify-center xl:justify-normal'>
-        <div id='mainContainer' className='h-full pb-[45px] max-w-[375px] xl:max-w-full xl:w-full xl:flex'>
+        <div id='mainContainer' className='h-full pb-[45px] max-w-[375px] xl:max-w-full xl:w-full xl:flex xl:pb-0'>
           <div id='topWrapper' className='xl:w-[705px]'>
             <Top name={name} number={number} exp={exp} cvc={cvc}/>
           </div>
