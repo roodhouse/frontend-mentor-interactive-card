@@ -51,7 +51,7 @@ function Form({ recordName, recordNumber, recordMonth, recordYear, recordCvc }) 
           <div id="cardHolderNumberWrapper" className='w-full mb-1'>
             <CardHolderNumber register={register} recordNumber={recordNumber} errors={errors} />
           </div>
-          <div id="expCvcWrapper" className='w-full flex mb-7'>
+          <div id="expCvcWrapper" className='w-full flex mb-7 xl:mb-[15px]'>
             <div id="expWrapper" className='mr-[11px]'>
               <Exp register={register} recordMonth={recordMonth} recordYear={recordYear} errors={errors} />
             </div>
